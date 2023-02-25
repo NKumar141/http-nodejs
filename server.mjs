@@ -12,7 +12,8 @@ app.get("/", (req, res) => {
   res.send("Hello i am live");
 });
 app.get("/service", () => {
-  res.send(apidata);
+  res.send("Hello i am live");
+  //res.send(apidata);
 });
 app.listen(port, () => {
   console.log("i am live again");
