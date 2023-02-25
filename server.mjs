@@ -1,6 +1,19 @@
-import { createServer } from 'http';
+const express = require("express");
+const cors = require("cors");
 
-createServer((req, res) => {
-  res.write('Hello World!');
-  res.end();
-}).listen(process.env.PORT);
+const app = express();
+const port = process.env.port || 3000;
+
+app.use(cors());
+
+const apidata = require("./data.json");
+
+app.get("/", (req, res) => {
+  res.send("Hello i am live");
+});
+app.get("/service", () => {
+  res.send(apidata);
+});
+app.listen(port, () => {
+  console.log("i am live again");
+});
